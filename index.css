@@ -1,0 +1,49 @@
+@import url("/css/nav.css");
+
+:root {
+    --background: hsla(210, 25%, 97%, 1);
+    --border: hsla(208, 25%, 85%, 1);
+
+    --text: hsla(200, 18%, 3%, 1);
+    --text-muted: hsla(209, 25%, 45%, 1);
+
+    --primary: hsla(200, 98%, 39%, 1);
+    --secondary: hsla(200, 42%, 73%, 1);
+    --accent: hsla(200, 51%, 62%, 1);
+
+    font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+    font-weight: normal;
+    color-scheme: light;
+}
+
+html {
+    background-color: var(--background);
+}
+
+body {
+    margin: 0;
+}
+
+/* *****    Utility    ***** */
+.spacer {
+    flex: 1;
+}
+
+.btn-ghost, .btn-primary {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 2rem;
+    padding: 0 1rem;
+    border-radius: 0.25rem;
+}
+
+.btn-ghost {
+    color: var(--accent);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--background);
+}
