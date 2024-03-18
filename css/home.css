@@ -1,0 +1,60 @@
+.hero {
+    display: flex;
+    height: 32rem;
+}
+
+.hero img {
+    width: 50lvw;
+    height: 32rem;
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*background-color: red;*/
+}
+
+.hero-content .phrase {
+    position: relative;
+}
+
+.hero-content .phrase h1 {
+    color: var(--text);
+    margin: 0;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 5.875rem; /* 109.302% */
+}
+
+.hero-content .phrase h1 span {
+    color: var(--primary);
+}
+
+.hero-content .phrase .decoration-1, .hero-content .phrase .decoration-2 {
+    position: absolute;
+    width: 15rem;
+    height: fit-content;
+    right: 1.25rem;
+    top: 4.5rem;
+}
+
+.hero-content .phrase .decoration-2 {
+    top: 5rem;
+}
+
+
+.hero-content .description {
+    padding: 1rem 2rem 0;
+    color: var(--text-muted);
+    text-align: center;
+    font-size: 0.875rem;
+    max-width: 32rem;
+}
+
+.hero-content .description p {
+    margin: 0.25rem 0;
+}
