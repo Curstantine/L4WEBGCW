@@ -1,42 +1,50 @@
 nav {
-    display: flex;
-    height: 3.5rem;
-    align-items: center;
-    padding: 0 3rem;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background-color: var(--background);
 }
 
+.nav-container {
+    display: flex;
+    height: 4rem;
+    align-items: center;
+    padding: 0 2rem;
+}
 
-nav .branding {
+.nav-container .branding {
     display: inline;
     color: var(--text);
     font-size: 1.125rem;
     font-weight: 500;
 }
 
-nav .branding :first-child {
+.nav-container .branding :first-child {
     color: var(--primary);
 }
 
-nav .actions {
+.nav-container .actions {
     display: inline-flex;
     gap: 1.25rem;
 }
 
-nav .primary-actions {
+.nav-container .primary-actions {
     display: inline-flex;
     gap: 0.5rem;
 }
 
-nav .actions a, nav .primary-actions a {
+.nav-container .actions a, .nav-container .primary-actions a {
     text-decoration: none;
     font-size: 1rem;
 }
 
-nav .actions a {
+.nav-container .actions a {
     color: var(--text);
 }
 
-nav .action-spacer {
+.nav-container .action-spacer {
     margin: 0 1rem;
     height: 26px;
     width: 1px;

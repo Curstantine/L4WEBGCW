@@ -1,0 +1,14 @@
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+
+[*.html]
+ij_html_indent_size = 4
+
+[*.js]
+ij_javascript_use_double_quotes = true
+
+[*.css]
+ij_css_use_double_quotes = true

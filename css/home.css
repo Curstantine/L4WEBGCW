@@ -6,6 +6,8 @@
 .hero img {
     width: 50lvw;
     height: 32rem;
+    border-radius: 2rem;
+    max-width: 52rem;
 }
 
 .hero-content {
