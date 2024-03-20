@@ -11,6 +11,9 @@
     --secondary: hsla(200, 42%, 73%, 1);
     --accent: hsla(200, 51%, 62%, 1);
 
+    --easing-standard: cubic-bezier(0.2, 0.0, 0, 1.0);
+    --duration-standard: 300ms;
+
     font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
     font-weight: normal;
     color-scheme: light;
