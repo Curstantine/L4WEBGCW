@@ -3,7 +3,7 @@ export default function initializeNav() {
 
     let offsetComplete = false;
 
-    document.addEventListener("scroll", (e) => {
+    document.addEventListener("scroll", () => {
         const isYOverOffset = window.scrollY > 50;
 
         if (!offsetComplete && isYOverOffset) {
@@ -17,6 +17,7 @@ export default function initializeNav() {
             offsetComplete = false;
         }
     });
+
 
     nav.innerHTML = /*html*/`
 <div class="nav-content container">
