@@ -22,12 +22,22 @@
 
 html {
     background-color: var(--background);
+
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
     margin: 0;
     overflow-x: hidden;
 }
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
 
 /* *****    Utility    ***** */
 .spacer {
