@@ -2,15 +2,15 @@
 @import url("./css/footer.css");
 
 :root {
-    --background: hsla(210, 25%, 97%, 1);
-    --border: hsla(208, 25%, 85%, 1);
+    --background: hsl(210, 25%, 97%, 1);
+    --border: hsl(208, 25%, 85%, 1);
 
     --text: hsla(200, 18%, 3%, 1);
-    --text-muted: hsla(209, 25%, 45%, 1);
+    --text-muted: hsl(from var(--text) h s 50%);
 
-    --primary: hsla(200, 98%, 39%, 1);
-    --secondary: hsla(200, 42%, 73%, 1);
-    --accent: hsla(200, 51%, 62%, 1);
+    --primary: hsl(200, 98%, 39%, 1);
+    --secondary: hsl(200, 42%, 73%, 1);
+    --accent: hsl(200, 51%, 62%, 1);
 
     --easing-standard: cubic-bezier(0.2, 0.0, 0, 1.0);
     --duration-standard: 300ms;
