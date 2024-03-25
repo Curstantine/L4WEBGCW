@@ -26,16 +26,16 @@ export default function initializeNav() {
             <div class="spacer"></div>
             
             <div class="actions">
-                <a href="/gallery.html">Gallery</a>
-                <a href="/shop.html">Shop</a>
-                <a href="/team.html">Team</a>
+                <a href="./gallery.html">Gallery</a>
+                <a href="./shop.html">Shop</a>
+                <a href="./team.html">Team</a>
             </div>
             
             <div class="action-spacer"></div>
             
             <div class="primary-actions">
-                <a href="/donate.html" class="btn-ghost">Donate</a>
-                <a href="/login.html" class="btn-primary">Login</a>
+                <a href="./donate.html" class="btn-ghost">Donate</a>
+                <a href="./login.html" class="btn-primary">Login</a>
             </div>
         </div>
     `;
