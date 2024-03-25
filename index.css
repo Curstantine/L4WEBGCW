@@ -22,6 +22,7 @@
 
 html {
     background-color: var(--background);
+    color: var(--text);
 
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
@@ -55,7 +56,7 @@ body {
 }
 
 .btn-ghost {
-    transition-property: color,background-color;
+    transition-property: color, background-color;
     transition-duration: var(--duration-standard);
     transition-timing-function: var(--easing-standard);
 
@@ -68,7 +69,7 @@ body {
 }
 
 .btn-primary {
-    transition-property: color,background-color;
+    transition-property: color, background-color;
     transition-duration: var(--duration-standard);
     transition-timing-function: var(--easing-standard);
 
@@ -83,6 +84,36 @@ body {
 .container {
     width: 100%;
     margin: 0 auto;
+}
+
+input[type="text"], input[type="email"], input[type="name"] {
+    appearance: none;
+    height: 2rem;
+    border-radius: 0.25rem;
+    background-color: transparent;
+
+    transition-property: border-color;
+    transition-duration: var(--duration-standard);
+    transition-timing-function: var(--easing-standard);
+
+    padding: 0.5rem;
+
+    border: 1px solid hsl(from var(--border) h s 80%);
+}
+
+input[type="text"]:active, input[type="email"]:active, input[type="name"]:active,
+input[type="text"]:focus, input[type="email"]:focus, input[type="name"]:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+button {
+    border: none;
+}
+
+label {
+    color: var(--text);
+    font-weight: 500;
 }
 
 @media (min-width: 640px) {

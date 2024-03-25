@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script defer type="module" src="./index.js"></script>
+
+    <link rel="stylesheet" href="./index.css"/>
+    <link rel="stylesheet" href="./css/feedback.css"/>
+
+    <title>WaterWafer</title>
+</head>
+
+<body>
+<nav></nav>
+
+<main>
+    <h1>Feedback</h1>
+    <span class="subheading">Share your concerns and valuable feedback with us!</span>
+
+    <form>
+
+        <label for="name">Name</label>
+        <input id="name" type="text"/>
+
+        <label for="email">Email</label>
+        <input id="email" type="email"/>
+
+        <div class="satisfaction">
+            <label>Are you satisfied with our service?</label>
+            <div class="selection">
+                <input type="radio" name="satisfied" id="satisfied-1" value="1"/>
+                <label for="satisfied-1">1</label>
+
+                <input type="radio" name="satisfied" id="satisfied-2" value="2"/>
+                <label for="satisfied-2">2</label>
+
+                <input type="radio" name="satisfied" id="satisfied-3" value="3"/>
+                <label for="satisfied-3">3</label>
+
+                <input type="radio" name="satisfied" id="satisfied-4" value="4"/>
+                <label for="satisfied-4">4</label>
+
+                <input type="radio" name="satisfied" id="satisfied-5" value="5"/>
+                <label for="satisfied-5">5</label>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-primary">Submit</button>
+    </form>
+</main>
+
+<footer></footer>
+</body>
+
+</html>

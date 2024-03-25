@@ -1,0 +1,46 @@
+main {
+    max-width: 32rem;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+h1 {
+    margin: 0;
+    line-height: 1.25;
+}
+
+.subheading {
+    color: var(--text-muted);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+
+input {
+    margin-bottom: 0.75rem;
+}
+
+label {
+    margin-bottom: 0.25rem;
+}
+
+.satisfaction {
+    margin-top: 1rem;
+}
+
+.satisfaction > label {
+    margin-bottom: 4rem;
+}
+
+.satisfaction .selection label {
+    margin-right: 0.75rem;
+    margin-left: 0.25rem;
+    margin-bottom: 0;
+}
+
+button[type="submit"] {
+    margin-top: 2rem;
+}
