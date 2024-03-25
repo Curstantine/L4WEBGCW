@@ -55,12 +55,29 @@ body {
 }
 
 .btn-ghost {
+    transition-property: color,background-color;
+    transition-duration: var(--duration-standard);
+    transition-timing-function: var(--easing-standard);
+
     color: var(--accent);
 }
 
+.btn-ghost:hover {
+    color: hsl(from var(--accent) h s 52%);
+    background-color: hsl(from var(--secondary) h s 88%);
+}
+
 .btn-primary {
-    background-color: var(--primary);
+    transition-property: color,background-color;
+    transition-duration: var(--duration-standard);
+    transition-timing-function: var(--easing-standard);
+
     color: var(--background);
+    background-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: hsl(from var(--primary) h s 45%);
 }
 
 .container {

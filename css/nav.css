@@ -47,6 +47,16 @@ nav {
 }
 
 .nav-content .actions a {
+    color: var(--text-muted);
+    transition-property: color;
+    transition-duration: var(--duration-standard);
+    transition-timing-function: var(--easing-standard);
+
+    border-radius: 0.25rem;
+    padding: 0.25rem;
+}
+
+.nav-content .actions a:hover {
     color: var(--text);
 }
 
