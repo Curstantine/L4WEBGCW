@@ -86,7 +86,13 @@ body {
     margin: 0 auto;
 }
 
-input[type="text"], input[type="email"], input[type="name"] {
+label.required:after {
+    content:" *";
+    color: red;
+    display: inline;
+}
+
+input[type="text"], input[type="email"], input[type="name"], textarea {
     appearance: none;
     height: 2rem;
     border-radius: 0.25rem;
@@ -101,8 +107,8 @@ input[type="text"], input[type="email"], input[type="name"] {
     border: 1px solid hsl(from var(--border) h s 80%);
 }
 
-input[type="text"]:active, input[type="email"]:active, input[type="name"]:active,
-input[type="text"]:focus, input[type="email"]:focus, input[type="name"]:focus {
+input[type="text"]:active, input[type="email"]:active, input[type="name"]:active, textarea:active,
+input[type="text"]:focus, input[type="email"]:focus, input[type="name"]:focus, textarea:focus {
     outline: none;
     border-color: var(--primary);
 }
@@ -114,16 +120,6 @@ button {
 label {
     color: var(--text);
     font-weight: 500;
-}
-
-input[type="radio"] {
-    appearance: none;
-    background-color: var(--background);
-    border-radius: 2rem;
-    border: 1px solid var(--border);
-    height: 1rem;
-    width: 1rem;
-    margin: 0;
 }
 
 @media (min-width: 640px) {

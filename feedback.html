@@ -21,15 +21,18 @@
     <span class="subheading">Share your concerns and valuable feedback with us!</span>
 
     <form>
+        <label for="name" class="required">Name</label>
+        <input id="name" type="text" required/>
 
-        <label for="name">Name</label>
-        <input id="name" type="text"/>
+        <label for="email" class="required">Email</label>
+        <input id="email" type="email" required />
 
-        <label for="email">Email</label>
-        <input id="email" type="email"/>
+
+        <label for="content" class="required">Content</label>
+        <textarea id="content" required></textarea>
 
         <div class="satisfaction">
-            <label>Are you satisfied with our service?</label>
+            <label>How satisfied are you with our service?</label>
             <div class="selection">
                 <input type="radio" name="satisfied" id="satisfied-1" value="1"/>
                 <label for="satisfied-1">1</label>
