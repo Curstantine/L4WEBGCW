@@ -116,6 +116,16 @@ label {
     font-weight: 500;
 }
 
+input[type="radio"] {
+    appearance: none;
+    background-color: var(--background);
+    border-radius: 2rem;
+    border: 1px solid var(--border);
+    height: 1rem;
+    width: 1rem;
+    margin: 0;
+}
+
 @media (min-width: 640px) {
     .container {
         max-width: 600px;
