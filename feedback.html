@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script defer type="module" src="./index.js"></script>
+    <script defer type="module" src="./js/feedback.js"></script>
 
     <link rel="stylesheet" href="./index.css"/>
     <link rel="stylesheet" href="./css/feedback.css"/>
@@ -20,16 +21,21 @@
     <h1>Feedback</h1>
     <span class="subheading">Share your concerns and valuable feedback with us!</span>
 
-    <form>
-        <label for="name" class="required">Name</label>
-        <input id="name" type="text" required/>
+    <form id="feedback" novalidate>
+        <div class="input-field">
+            <label for="name" class="required">Name</label>
+            <input id="name" type="text" minlength="3" required/>
+        </div>
 
-        <label for="email" class="required">Email</label>
-        <input id="email" type="email" required />
+        <div class="input-field">
+            <label for="email" class="required">Email</label>
+            <input id="email" type="email" minlength="3" required/>
+        </div>
 
-
-        <label for="content" class="required">Content</label>
-        <textarea id="content" required></textarea>
+        <div class="input-field">
+            <label for="content" class="required">Content</label>
+            <textarea id="content" minlength="10" required></textarea>
+        </div>
 
         <div class="satisfaction">
             <label>How satisfied are you with our service?</label>
@@ -48,6 +54,21 @@
 
                 <input type="radio" name="satisfied" id="satisfied-5" value="5"/>
                 <label for="satisfied-5">5</label>
+
+                <input type="radio" name="satisfied" id="satisfied-6" value="6"/>
+                <label for="satisfied-6">6</label>
+
+                <input type="radio" name="satisfied" id="satisfied-7" value="7"/>
+                <label for="satisfied-7">7</label>
+
+                <input type="radio" name="satisfied" id="satisfied-8" value="8"/>
+                <label for="satisfied-8">8</label>
+
+                <input type="radio" name="satisfied" id="satisfied-9" value="9"/>
+                <label for="satisfied-9">9</label>
+
+                <input type="radio" name="satisfied" id="satisfied-10" value="10"/>
+                <label for="satisfied-10">10</label>
             </div>
         </div>
 

@@ -17,10 +17,20 @@ form {
     display: flex;
     flex-direction: column;
     margin-top: 1.5rem;
+    gap: 1.5rem;
 }
 
-input {
-    margin-bottom: 0.75rem;
+.input-field {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+#error-message {
+    position: absolute;
+    bottom: calc(-0.25rem + (-1lh));
+    font-size: 0.875rem;
+    color: var(--error-foreground);
 }
 
 label {
@@ -34,11 +44,7 @@ textarea {
 }
 
 .satisfaction {
-    margin-top: 1rem;
-}
-
-.satisfaction > label {
-    margin-bottom: 4rem;
+    margin-top: 0.5rem;
 }
 
 .satisfaction .selection {
@@ -46,10 +52,10 @@ textarea {
 }
 
 .satisfaction .selection label {
-    margin-right: 0.75rem;
+    margin-right: 0.5rem;
     font-weight: 400;
 }
 
 button[type="submit"] {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }

@@ -12,6 +12,9 @@
     --secondary: hsl(200, 42%, 73%, 1);
     --accent: hsl(200, 51%, 62%, 1);
 
+    --error-foreground: hsl(0, 70%, 35%);
+    --error-background: hsl(0, 93%, 94%);
+
     --easing-standard: cubic-bezier(0.2, 0.0, 0, 1.0);
     --duration-standard: 300ms;
 
@@ -87,7 +90,7 @@ body {
 }
 
 label.required:after {
-    content:" *";
+    content: " *";
     color: red;
     display: inline;
 }
@@ -98,7 +101,7 @@ input[type="text"], input[type="email"], input[type="name"], textarea {
     border-radius: 0.25rem;
     background-color: transparent;
 
-    transition-property: border-color;
+    transition-property: border-color, background-color;
     transition-duration: var(--duration-standard);
     transition-timing-function: var(--easing-standard);
 
@@ -111,6 +114,12 @@ input[type="text"]:active, input[type="email"]:active, input[type="name"]:active
 input[type="text"]:focus, input[type="email"]:focus, input[type="name"]:focus, textarea:focus {
     outline: none;
     border-color: var(--primary);
+}
+
+input.invalid, input.invalid:active, input.invalid:focus,
+textarea.invalid, textarea.invalid:active, textarea.invalid:focus {
+    border-color: var(--error-foreground);
+    background-color: var(--error-background);
 }
 
 button {
