@@ -133,6 +133,13 @@ label {
     font-weight: 500;
 }
 
+code {
+    font-family: "JetBrains Mono", "Fira Code", "monospace";
+    background-color: hsl(from var(--background) h s 90%);
+    border-radius: 0.25rem;
+    padding: 0.125rem 0.25rem;
+}
+
 @media (min-width: 640px) {
     .container {
         max-width: 600px;
