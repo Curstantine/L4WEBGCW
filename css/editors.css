@@ -1,0 +1,27 @@
+main {
+    max-width: 36rem;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.metadata {
+    display: grid;
+    grid-template-columns: 8ch 1fr;
+}
+
+.metadata :nth-child(odd) {
+    color: var(--text);
+    font-weight: 500;
+}
+
+article {
+    margin-top: 2rem;
+}
+
+article h2, article p {
+    margin: 0;
+}
+
+article h2 {
+    line-height: 1.625;
+}
