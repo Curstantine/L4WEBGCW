@@ -12,16 +12,21 @@
     --secondary: hsl(200, 42%, 73%, 1);
     --accent: hsl(200, 51%, 62%, 1);
 
+    --error-foreground: hsl(0, 70%, 35%);
+    --error-background: hsl(0, 93%, 94%);
+
     --easing-standard: cubic-bezier(0.2, 0.0, 0, 1.0);
     --duration-standard: 300ms;
 
     font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
     font-weight: normal;
     color-scheme: light;
+    scroll-behavior: smooth;
 }
 
 html {
     background-color: var(--background);
+    color: var(--text);
 
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
@@ -55,9 +60,10 @@ body {
 }
 
 .btn-ghost {
-    transition-property: color,background-color;
+    transition-property: color, background-color;
     transition-duration: var(--duration-standard);
     transition-timing-function: var(--easing-standard);
+    text-decoration: none;
 
     color: var(--accent);
 }
@@ -68,7 +74,7 @@ body {
 }
 
 .btn-primary {
-    transition-property: color,background-color;
+    transition-property: color, background-color;
     transition-duration: var(--duration-standard);
     transition-timing-function: var(--easing-standard);
 
@@ -83,6 +89,48 @@ body {
 .container {
     width: 100%;
     margin: 0 auto;
+}
+
+label.required:after {
+    content: " *";
+    color: red;
+    display: inline;
+}
+
+input[type="text"], input[type="email"], input[type="name"], textarea {
+    appearance: none;
+    height: 2rem;
+    border-radius: 0.25rem;
+    background-color: transparent;
+
+    transition-property: border-color, background-color;
+    transition-duration: var(--duration-standard);
+    transition-timing-function: var(--easing-standard);
+
+    padding: 0.5rem;
+
+    border: 1px solid hsl(from var(--border) h s 80%);
+}
+
+input[type="text"]:active, input[type="email"]:active, input[type="name"]:active, textarea:active,
+input[type="text"]:focus, input[type="email"]:focus, input[type="name"]:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+input.invalid, input.invalid:active, input.invalid:focus,
+textarea.invalid, textarea.invalid:active, textarea.invalid:focus {
+    border-color: var(--error-foreground);
+    background-color: var(--error-background);
+}
+
+button {
+    border: none;
+}
+
+label {
+    color: var(--text);
+    font-weight: 500;
 }
 
 @media (min-width: 640px) {

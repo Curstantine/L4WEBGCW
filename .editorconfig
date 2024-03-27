@@ -9,6 +9,9 @@ ij_html_indent_size = 4
 
 [*.js]
 ij_javascript_use_double_quotes = true
+ij_javascript_force_semicolon_style = true
+ij_javascript_align_imports = true
+ij_javascript_spaces_within_imports = true
 
 [*.css]
 ij_css_use_double_quotes = true
