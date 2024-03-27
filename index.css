@@ -21,6 +21,7 @@
     font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
     font-weight: normal;
     color-scheme: light;
+    scroll-behavior: smooth;
 }
 
 html {
@@ -62,6 +63,7 @@ body {
     transition-property: color, background-color;
     transition-duration: var(--duration-standard);
     transition-timing-function: var(--easing-standard);
+    text-decoration: none;
 
     color: var(--accent);
 }

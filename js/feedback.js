@@ -37,6 +37,7 @@ form.addEventListener("submit", (e) => {
         setError(formContent, "Content should be at least 10 characters!");
     }
 
+    replaceFormWithCompletion();
     e.preventDefault();
 });
 
@@ -87,9 +88,17 @@ function removeError(where) {
 }
 
 function replaceFormWithCompletion() {
-    form.insertAdjacentHTML("beforebegin", /*html*/`
-        <div>
-            <span>hi</span>
+    const main = document.getElementsByTagName("main")[0];
+
+    window.scroll(0, 0);
+
+    main.innerHTML = /*html*/`
+        <div id="completion">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                <path fill="currentColor" d="m382-354 339-339q12-12 28.5-12t28.5 12q12 12 12 28.5T778-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z"/>
+            </svg>
+            <span>Your feedback has been submitted!</span>
+            <a href="./index.html" class="btn-ghost">Go back home</a>
         </div>
-    `);
+    `;
 }
