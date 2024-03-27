@@ -4,18 +4,22 @@ import { emailRegex } from "./utilities.js";
 const form = document.getElementById("feedback");
 
 /** @type {HTMLInputElement} */
-const formName = document.querySelector("#feedback #name");
+const formName = form.elements["name"];
 
 /** @type {HTMLInputElement} */
-const formEmail = document.querySelector("#feedback #email");
+const formEmail = form.elements["email"];
 
 /** @type {HTMLTextAreaElement} */
-const formContent = document.querySelector("#feedback #content");
+const formContent = form.elements["content"];
+
+/** @type {RadioNodeList} */
+const formSatisfied = form.elements["satisfied"];
 
 form.addEventListener("submit", (e) => {
     const email = formEmail.value.trim();
     const name = formName.value.trim();
     const content = formContent.value.trim();
+    const satisfaction = formSatisfied.value !== null ? Number.parseInt(formSatisfied.value.trim()) : null;
 
     if (formName.validity.tooShort) {
         setError(formName, "Please enter a name longer than 3 characters!");
@@ -82,6 +86,10 @@ function removeError(where) {
     target.remove();
 }
 
-
-
-
+function replaceFormWithCompletion() {
+    form.insertAdjacentHTML("beforebegin", /*html*/`
+        <div>
+            <span>hi</span>
+        </div>
+    `);
+}
