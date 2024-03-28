@@ -62,6 +62,7 @@ article .description {
     font-style: normal;
     font-weight: 500;
     line-height: 5.875rem;
+    text-align: center;
 }
 
 .hero-content .phrase h1 span {
@@ -72,12 +73,12 @@ article .description {
     position: absolute;
     width: 15rem;
     height: fit-content;
-    right: 2.5rem;
-    top: 4.5rem;
+    right: 0.75rem;
+    top: 4.75rem;
 }
 
 .hero-content .phrase .decoration-2 {
-    top: 5rem;
+    top: 5.25rem;
 }
 
 .hero-content .description {

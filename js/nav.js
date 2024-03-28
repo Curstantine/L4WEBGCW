@@ -8,7 +8,7 @@ function getLocation() {
         return pathname[0].replace(".html", "");
     }
 
-    return "index";
+    return "home";
 }
 
 export default function initializeNav() {
@@ -34,7 +34,7 @@ export default function initializeNav() {
 
     nav.innerHTML = /*html*/`
         <div class="nav-content container">
-            <a href="./index.html">  
+            <a href="./home.html">  
                 <img alt="WaterWafer" src="/assets/logo.svg" width="120" height="40" style="margin-top: 4px" />
             </a>
                 
