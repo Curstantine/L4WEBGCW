@@ -132,27 +132,19 @@ article .description {
     ********************
 */
 .mission {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto 1fr;
-    grid-template-areas:
-        "image heading heading"
-        "image description description";
-
+    display: flex;
+    align-items: center;
     padding: 2rem;
     border-radius: 1.5rem;
     background-color: hsl(from var(--secondary) h s 90%);
 }
 
 .mission .description {
-    align-self: end;
     max-width: 75ch;
     color: hsl(from var(--primary) h s 15%);
 }
 
-
 .mission img {
-    align-self: center;
     width: 18rem;
     height: 18rem;
     margin-right: 2rem;
