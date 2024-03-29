@@ -18,6 +18,7 @@ export default function initializeFooter() {
                 <a href="./feedback.html">Feedback</a>
                 
                 <a href="./donate.html">Donate</a>
+                <a href="./goals.html">Goals</a>
             </div>
                   
             <div class="copyright">

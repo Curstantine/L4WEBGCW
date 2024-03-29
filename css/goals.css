@@ -1,0 +1,77 @@
+h1, h2 {
+    color: hsl(from var(--primary) h s 20%);
+}
+
+.hero {
+    display: flex;
+    height: 36rem;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content h1 {
+    margin: 0 0 0.75rem 0;
+    font-size: 3.75rem;
+    line-height: 1.125;
+}
+
+.hero-content span {
+    max-width: 50ch;
+    line-height: 1.25;
+    color: var(--text-muted);
+}
+
+.hero img {
+    height: 18rem;
+    width: 18rem;
+    border-radius: 2rem;
+}
+
+article {
+    margin: 4rem 0;
+    padding: 0 2rem;
+}
+
+article h2 {
+    margin: 0.25em 0 0;
+    font-size: 2.25rem;
+    line-height: 1.25;
+}
+
+article .description {
+    max-width: 75ch;
+}
+
+.mission {
+    margin-top: 0;
+}
+
+.goals .listings {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: space-evenly;
+}
+
+.goals .listings > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.goals .listings > div img {
+    width: 12rem;
+    border-radius: 1.5rem;
+}
+
+.goals .listings > div span {
+    text-align: center;
+    max-width: 25ch;
+    line-height: 1.25;
+}

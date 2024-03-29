@@ -5,6 +5,7 @@
 */
 article {
     margin: 4rem 0;
+    padding: 0 2rem;
 }
 
 article h2 {
@@ -34,7 +35,7 @@ article .description {
 */
 .hero {
     display: flex;
-    max-height: 36rem;
+    height: 36rem;
 }
 
 .hero img {
