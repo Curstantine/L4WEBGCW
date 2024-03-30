@@ -110,11 +110,8 @@ article .description {
         "description description image";
 }
 
-.introduction h2 {
-    /*align-self: end;*/
-}
-
-.introduction .description {
+.introduction .description,
+.donation .description {
     max-width: 60ch;
     height: min-content;
 }
@@ -124,6 +121,61 @@ article .description {
     margin-left: 3rem;
     width: 50lvw;
     max-width: 56rem;
+}
+
+/*
+    ********************
+    *     Donation     *
+    ********************
+*/
+.donation {
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    grid-template-areas:
+        "image heading heading"
+        "image description description"
+        "image listings listings";
+}
+
+.donation img {
+    align-self: center;
+    margin-right: 3rem;
+    width: 35lvw;
+    max-width: 56rem;
+}
+
+.donation .listings {
+    grid-area: listings;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.donation .listings .card {
+    text-decoration: none;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    padding: 1.25rem;
+
+    color: var(--text-muted);
+    transition-property: color,border-color;
+    transition-duration: var(--duration-standard);
+    transition-timing-function: var(--easing-standard);
+}
+
+.donation .listings .card:hover {
+    border-color: hsl(from var(--border) h s 60%);
+    color: var(--text);
+}
+
+.donation .listings .card h3 {
+    color: var(--text);
+    margin: 0 0 0.25rem 0;
+}
+
+.donation .listings .card span {
+    line-height: 1.25;
 }
 
 /*
