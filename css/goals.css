@@ -74,4 +74,6 @@ article .description {
     text-align: center;
     max-width: 25ch;
     line-height: 1.25;
+    font-size: 0.875rem;
+    font-weight: 500;
 }
