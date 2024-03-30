@@ -41,6 +41,7 @@ export default function initializeNav() {
             <div class="spacer"></div>
             
             <div class="actions">
+                <a href="./about.html" data-active=${location === "about"}>About</a>
                 <a href="./gallery.html" data-active=${location === "gallery"}>Gallery</a>
                 <a href="./shop.html" data-active=${location === "shop"}>Shop</a>
                 <a href="./team.html" data-active=${location === "team"}>Team</a>

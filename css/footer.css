@@ -24,7 +24,7 @@ footer {
     grid-area: links;
     display: grid;
     gap: 0.25rem 0;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     max-width: 32rem;
 }
 
