@@ -35,7 +35,7 @@ export default function initializeNav() {
     nav.innerHTML = /*html*/`
         <div class="nav-content container">
             <a href="./home.html">  
-                <img alt="WaterWafer" src="/assets/logo.svg" width="120" height="40" style="margin-top: 4px" />
+                <img alt="WaterWafer" src="/assets/logo.svg" width="120" height="40" style="margin-top: 12px" />
             </a>
                 
             <div class="spacer"></div>

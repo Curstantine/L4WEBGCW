@@ -4,8 +4,7 @@
     ********************
 */
 article {
-    margin: 4rem 0;
-    padding: 0 2rem;
+    margin: 4rem 2rem;
 }
 
 article h2 {
@@ -145,6 +144,13 @@ article .description {
     max-width: 56rem;
 }
 
+.donation .description {
+    margin: 0.5rem 0;
+}
+.donation .description p {
+    margin: 0 0 0.25rem 0;
+}
+
 .donation .listings {
     grid-area: listings;
     display: grid;
@@ -153,12 +159,13 @@ article .description {
 }
 
 .donation .listings .card {
-    text-decoration: none;
+    max-height: 10rem;
+    padding: 1.25rem;
     border-radius: 1rem;
     border: 1px solid var(--border);
-    padding: 1.25rem;
 
     color: var(--text-muted);
+    text-decoration: none;
     transition-property: color,border-color;
     transition-duration: var(--duration-standard);
     transition-timing-function: var(--easing-standard);
