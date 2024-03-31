@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Splash screen</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(141, 214, 236);
+        color: #f9f2f2;
+      }
+
+      .splash-container {
+        text-align: center;
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        animation: fade-in 2s forwards;
+      }
+
+      .splash-title {
+        font-size: 18px;
+        color: black;
+      }
+
+      .loader {
+        border: 5px solid #f3f3f3;
+        border-top: 8px solid #000000;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto;
+      }
+
+      .splash-description {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        font-size: 0.875rem;
+        /* color: var(--text); */
+        color: #000;
+        margin-bottom: 30px;
+      }
+
+      .splashbox {
+        background-color: rgb(0, 0, 0);
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 40%;
+        border-radius: 5px;
+      }
+
+      .splash-logo {
+        margin-top: 50px;
+      }
+
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        /* padding: 10px; */
+        display: flex;
+        justify-content: space-between;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+
+      .footer-section {
+        flex: 1;
+        padding: 10px;
+        margin-right: 20px;
+        text-align: center;
+      }
+
+      .footer-section:last-child {
+        margin-right: 0;
+      }
+
+      .footer-section h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .footer-section p {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+    <script>
+      setTimeout(function () {
+        window.location.href = "#";
+      }, 4000);
+    </script>
+  </head>
+  <body>
+    <div class="splash-container">
+      <div class="loader"></div>
+
+      <img src="logo.svg" alt="logo" class="splash-logo" />
+
+      <div class="splash-title"><h1>Welcome to WATERWAFER</h1></div>
+      <div class="splash-description">
+        We hold the conviction that water serves as a crucial catalyst in breaking the chains of poverty, safeguarding lives, and
+        nurturing hopeful futures. Our mission is centered on democratizing
+        access to water and sanitation, striving to ensure its safety,
+        availability, and affordability for all.
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+    </div>
+    <footer>
+      
+      <div class="footer-section">
+        <h2>Development Team</h2>
+        <div>
+          <p>Dilethni Abeysinghe</p>
+          <p>Rachala Ovin </p>
+          <p>Miyuni Lowe</p>
+          <p>Hirushi Karunarathna</p>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h2>Get Help</h2>
+        <p>FAQ</p>
+      </div>
+      <div class="footer-section">
+        <h2>Role</h2>
+        <div>
+          <p>20220805</p>
+          <p>20220945</p>
+          <p>20220800</p>
+          <p>20220989</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
