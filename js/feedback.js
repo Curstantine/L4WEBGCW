@@ -21,6 +21,18 @@ form.addEventListener("submit", (e) => {
     const content = formContent.value.trim();
     const satisfaction = formSatisfied.value !== null ? Number.parseInt(formSatisfied.value.trim()) : null;
 
+    let err = false;
+
+    /**
+     * Convenience wrapper around setErrorToField
+     * @param x {Element}
+     * @param y {string}
+     */
+    const setError = (x, y) => {
+        err = true;
+        setErrorToField(x, y);
+    }
+
     if (formName.validity.tooShort) {
         setError(formName, "Please enter a name longer than 3 characters!");
     }
@@ -37,8 +49,9 @@ form.addEventListener("submit", (e) => {
         setError(formContent, "Content should be at least 10 characters!");
     }
 
-    replaceFormWithCompletion();
+
     e.preventDefault();
+    if (!err) replaceFormWithCompletion();
 });
 
 formName.addEventListener("input", cleanErrorsOnInput);
@@ -49,14 +62,14 @@ formContent.addEventListener("input", cleanErrorsOnInput);
  * @param e {InputEvent}
  */
 function cleanErrorsOnInput(e) {
-    removeError(e.target);
+    removeErrorFromField(e.target);
 }
 
 /**
  * @param message {string}
  * @param where {Element}
  */
-function setError(where, message) {
+function setErrorToField(where, message) {
     const isPopulated = where.classList.contains("invalid");
 
     const inner = /*html*/`
@@ -79,7 +92,7 @@ function setError(where, message) {
 /**
  * @param where {Element}
  */
-function removeError(where) {
+function removeErrorFromField(where) {
     if (!where.classList.contains("invalid")) return;
 
     const target = document.querySelector(`#error-message[data-parent=${where.id}]`);
