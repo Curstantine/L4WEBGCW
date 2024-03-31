@@ -1,5 +1,3 @@
-import { emailRegex } from "./utilities.js";
-
 /** @type {HTMLFormElement} */
 const form = document.getElementById("feedback");
 
@@ -41,7 +39,7 @@ form.addEventListener("submit", (e) => {
         setError(formEmail, "Email field is missing, or not long enough!");
     }
 
-    if (!emailRegex.test(email)) {
+    if (formEmail.validity.typeMismatch) {
         setError(formEmail, "Email entered does not follow the valid format!");
     }
 
