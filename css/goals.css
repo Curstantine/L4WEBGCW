@@ -77,3 +77,7 @@ article .description {
     font-size: 0.875rem;
     font-weight: 500;
 }
+
+.page-editor-credits {
+    padding: 0 2rem 1rem;
+}
