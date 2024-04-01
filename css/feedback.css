@@ -92,3 +92,7 @@ button[type="submit"] {
 #completion a {
     margin-top: 0.75rem;
 }
+
+.page-editor-credits {
+    /*padding-top: 2rem;*/
+}
