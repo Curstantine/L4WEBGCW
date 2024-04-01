@@ -1,376 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
     <title>Shop</title>
-    <link rel="stylesheet" href="shop.css" />
+    <link rel="stylesheet" href="shop.css"/>
 
     <style>
-      .anchor {
-        display: flex;
-        margin-left: 100px;
-        border: 3px black solid;
-        background-color: #fa000038;
-        padding: 15px;
-        border-radius: 10px;
-        font-weight: bold;
-        color: #000000;
-        text-decoration: none;
-        font-size: 16px;
-        display: inline-block;
-        cursor: pointer;
-      }
+        .anchor {
+            display: flex;
+            margin-left: 100px;
+            border: 3px black solid;
+            background-color: #fa000038;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #000000;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+            cursor: pointer;
+        }
 
-      .anchor .anchor {
-        color: black;
-      }
+        .anchor .anchor {
+            color: black;
+        }
 
-      .anchor:hover {
-        background-color: transparent;
-      }
+        .anchor:hover {
+            background-color: transparent;
+        }
     </style>
 
     <script>
-      let shopCart = [];
+        let shopCart = [];
 
-      function addToCart(product, price, quantity, inputId) {
-        quantity = parseInt(quantity);
-        if (quantity < 1 || isNaN(quantity)) {
-          alert("Please provide a valid quantity (minimum: 1).");
-          return;
+        function addToCart(product, price, quantity, inputId) {
+            quantity = parseInt(quantity);
+            if (quantity < 1 || isNaN(quantity)) {
+                alert("Please provide a valid quantity (minimum: 1).");
+                return;
+            }
+
+            let existItem = shopCart.find((item) => item.product === product);
+            if (existItem) {
+                existItem.quantity += quantity;
+            } else {
+                shopCart.push({product, price, quantity});
+            }
+            displayCart();
+            document.getElementById(inputId).value = ""; // Clear input field
         }
 
-        let existItem = shopCart.find((item) => item.product === product);
-        if (existItem) {
-          existItem.quantity += quantity;
-        } else {
-          shopCart.push({ product, price, quantity });
+        function updateQuantity(index, newQuantity) {
+            newQuantity = parseInt(newQuantity);
+            if (newQuantity >= 1 && !isNaN(newQuantity)) {
+                shopCart[index].quantity = newQuantity;
+                displayCart();
+            }
         }
-        displayCart();
-        document.getElementById(inputId).value = ""; // Clear input field
-      }
 
-      function updateQuantity(index, newQuantity) {
-        newQuantity = parseInt(newQuantity);
-        if (newQuantity >= 1 && !isNaN(newQuantity)) {
-          shopCart[index].quantity = newQuantity;
-          displayCart();
+        function removeItem(index) {
+            shopCart.splice(index, 1);
+            displayCart();
         }
-      }
 
-      function removeItem(index) {
-        shopCart.splice(index, 1);
-        displayCart();
-      }
-
-      function displayCart() {
-        let cartItems = document.getElementById("cart-items");
-        cartItems.innerHTML = "";
-        let totalPrice = 0;
-        shopCart.forEach((item, index) => {
-          let listItem = document.createElement("li");
-          let totalPriceItem = item.price * item.quantity;
-          listItem.innerHTML = `${item.product} (Quantity: 
+        function displayCart() {
+            let cartItems = document.getElementById("cart-items");
+            cartItems.innerHTML = "";
+            let totalPrice = 0;
+            shopCart.forEach((item, index) => {
+                let listItem = document.createElement("li");
+                let totalPriceItem = item.price * item.quantity;
+                listItem.innerHTML = `${item.product} (Quantity:
                         <input class="quantity-input" type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)">) 
                         - $${totalPriceItem} <button onclick="removeItem(${index})">Remove</button>`;
-          cartItems.appendChild(listItem);
-          totalPrice += totalPriceItem;
-        });
-        document.getElementById("total-price").innerText = totalPrice;
-      }
+                cartItems.appendChild(listItem);
+                totalPrice += totalPriceItem;
+            });
+            document.getElementById("total-price").innerText = totalPrice;
+        }
     </script>
-  </head>
-  <body style="background-color: rgb(168, 245, 255)">
-    <img src="logo.svg" alt="logo" />
+</head>
+<body style="background-color: rgb(168, 245, 255)">
+<img src="logo.svg" alt="logo"/>
 
-    <div class="navbar">
-      <nav>
+<div class="navbar">
+    <nav>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="#">Query</a></li>
-          <li><a href="#">Feedback</a></li>
-          <li><a href="#">User Profile</a></li>
-          <li><a href="#">Sitemap</a></li>
-          <li><a href="#">About us</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="#">Query</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#">User Profile</a></li>
+            <li><a href="#">Sitemap</a></li>
+            <li><a href="#">About us</a></li>
         </ul>
-      </nav>
-    </div>
-    <br />
-    <br />
+    </nav>
+</div>
+<br/>
+<br/>
 
-    <h1>Shop with us</h1>
+<h1>Shop with us</h1>
 
-    <section id="boxes" class="space">
-      <div class="option_box">
+<section id="boxes" class="space">
+    <div class="option_box">
         <h4><b>UNIQUE DESIGNS</b></h4>
         <img
-          src="c:\Users\User\OneDrive\Desktop\Web cw\uni.jpeg"
-          alt="uni"
-          width="140"
-          height="140"
+            src="c:\Users\User\OneDrive\Desktop\Web cw\uni.jpeg"
+            alt="uni"
+            width="140"
+            height="140"
         />
-      </div>
+    </div>
 
-      <div class="option_box">
+    <div class="option_box">
         <h4><b>FREE DELIVERY</b></h4>
         <img
-          src="c:\Users\User\OneDrive\Desktop\Web cw\deli.jpeg"
-          alt="deli"
-          width="140"
-          height="140"
+            src="c:\Users\User\OneDrive\Desktop\Web cw\deli.jpeg"
+            alt="deli"
+            width="140"
+            height="140"
         />
-      </div>
+    </div>
 
-      <div class="option_box">
+    <div class="option_box">
         <h4><b>ONLINE SHOPPING </b></h4>
         <img
-          src=" c:\Users\User\OneDrive\Desktop\Web cw\onli.png"
-          alt="onli"
-          width="140"
-          height="140"
+            src=" c:\Users\User\OneDrive\Desktop\Web cw\onli.png"
+            alt="onli"
+            width="140"
+            height="140"
         />
-      </div>
-    </section>
+    </div>
+</section>
 
-    <br />
-    <br />
+<br/>
+<br/>
 
-    <div class="product">
-      <div class="product img">
+<div class="product">
+    <div class="product img">
         <img
-          src="c:\Users\User\OneDrive\Desktop\Web cw\tshirt.jpeg"
-          alt="tshirt"
-          width="100"
-          height="100"
+            src="c:\Users\User\OneDrive\Desktop\Web cw\tshirt.jpeg"
+            alt="tshirt"
+            width="100"
+            height="100"
         />
         <p><b>Unisex Tshirt</b></p>
         <p>Price: $25</p>
         <form>
-          <label for="size">Size:</label>
-          <select name="Size" id="size">
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-            <option value="XL">XL</option>
-          </select>
-          <label for="colour">Colour:</label>
-          <input type="color" id="colour" name="colour" /><br />
-          <br />
-          <br />
+            <label for="size">Size:</label>
+            <select name="Size" id="size">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+            <label for="colour">Colour:</label>
+            <input type="color" id="colour" name="colour"/><br/>
+            <br/>
+            <br/>
         </form>
 
         <button
-          onclick="addToCart('Unisex Tshirt', 25, document.getElementById('quantity-Unisex Tshirt').value, 'quantity-Unisex Tshirt')"
+            onclick="addToCart('Unisex Tshirt', 25, document.getElementById('quantity-Unisex Tshirt').value, 'quantity-Unisex Tshirt')"
         >
-          Add to cart
+            Add to cart
         </button>
         <input
-          type="number"
-          id="quantity-Unisex Tshirt"
-          class="quantity-input"
-          min="1"
+            type="number"
+            id="quantity-Unisex Tshirt"
+            class="quantity-input"
+            min="1"
         />
-      </div>
+    </div>
 
-      <div class="product img">
+    <div class="product img">
         <img
-          src="c:\Users\User\OneDrive\Desktop\Web cw\hoodie.jpeg"
-          alt="hoodie"
-          width="100"
-          height="100"
+            src="c:\Users\User\OneDrive\Desktop\Web cw\hoodie.jpeg"
+            alt="hoodie"
+            width="100"
+            height="100"
         />
         <p><b>Hoodie</b></p>
         <p>Price: $45</p>
         <form>
-          <label for="size">Size:</label>
-          <select name="Size" id="size">
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-            <option value="XL">XL</option>
-          </select>
+            <label for="size">Size:</label>
+            <select name="Size" id="size">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
 
-          <label for="colour">Colour:</label>
-          <input type="color" id="colour" name="colour" /><br />
+            <label for="colour">Colour:</label>
+            <input type="color" id="colour" name="colour"/><br/>
 
-          <br />
-          <br />
+            <br/>
+            <br/>
         </form>
 
         <button
-          onclick="addToCart('Hoodie', 45, document.getElementById('quantity-Hoodie').value, 'quantity-Hoodie')"
+            onclick="addToCart('Hoodie', 45, document.getElementById('quantity-Hoodie').value, 'quantity-Hoodie')"
         >
-          Add to cart
+            Add to cart
         </button>
         <input
-          type="number"
-          id="quantity-Hoodie"
-          class="quantity-input"
-          min="1"
+            type="number"
+            id="quantity-Hoodie"
+            class="quantity-input"
+            min="1"
         />
-      </div>
+    </div>
 
-      <div class="product img">
+    <div class="product img">
         <img
-          src="c:\Users\User\OneDrive\Desktop\Web cw\cap.jpeg"
-          alt="cap"
-          width="100"
-          height="100"
+            src="c:\Users\User\OneDrive\Desktop\Web cw\cap.jpeg"
+            alt="cap"
+            width="100"
+            height="100"
         />
         <p><b>Cap </b></p>
         <p>Price: $15</p>
         <form>
-          <label for="colour">Colour:</label>
-          <input type="color" id="colour" name="colour" /><br />
+            <label for="colour">Colour:</label>
+            <input type="color" id="colour" name="colour"/><br/>
         </form>
-        <br />
+        <br/>
 
         <button
-          onclick="addToCart('Cap ', 15, document.getElementById('quantity-Cap ').value, 'quantity-Cap ')"
+            onclick="addToCart('Cap ', 15, document.getElementById('quantity-Cap ').value, 'quantity-Cap ')"
         >
-          Add to cart
+            Add to cart
         </button>
         <input
-          type="number"
-          id="quantity-Cap "
-          class="quantity-input"
-          min="1"
+            type="number"
+            id="quantity-Cap "
+            class="quantity-input"
+            min="1"
         />
-      </div>
+    </div>
 
-      <br />
+    <br/>
 
-      <div class="product img">
+    <div class="product img">
         <img
-          src="c:\Users\User\OneDrive\Desktop\Web cw\hat.jpeg"
-          alt="hat"
-          width="100"
-          height="100"
+            src="c:\Users\User\OneDrive\Desktop\Web cw\hat.jpeg"
+            alt="hat"
+            width="100"
+            height="100"
         />
         <p><b>Hat</b></p>
         <p>Price: $25</p>
         <form>
-          <label for="colour">Colour:</label>
-          <input type="color" id="colour" name="colour" /><br />
+            <label for="colour">Colour:</label>
+            <input type="color" id="colour" name="colour"/><br/>
         </form>
-        <br />
+        <br/>
 
         <button
-          onclick="addToCart('Hat', 25, document.getElementById('quantity-Hat').value, 'quantity-Hat')"
+            onclick="addToCart('Hat', 25, document.getElementById('quantity-Hat').value, 'quantity-Hat')"
         >
-          Add to cart
+            Add to cart
         </button>
-        <input type="number" id="quantity-Hat" class="quantity-input" min="1" />
-      </div>
+        <input type="number" id="quantity-Hat" class="quantity-input" min="1"/>
+    </div>
 
-      <div class="product img">
+    <div class="product img">
         <img
-          src="c:\Users\User\OneDrive\Desktop\Web cw\popsocket.jpeg"
-          alt="popsocket"
-          width="100"
-          height="100"
+            src="c:\Users\User\OneDrive\Desktop\Web cw\popsocket.jpeg"
+            alt="popsocket"
+            width="100"
+            height="100"
         />
         <p><b>Pop Socket </b></p>
         <p>Price: $10</p>
         <form>
-          <label for="colour">Colour:</label>
-          <input type="color" id="colour" name="colour" /><br />
+            <label for="colour">Colour:</label>
+            <input type="color" id="colour" name="colour"/><br/>
         </form>
-        <br />
+        <br/>
         <button
-          onclick="addToCart('Pop socket', 10, document.getElementById('quantity-Pop socket').value, 'quantity-Pop socket')"
+            onclick="addToCart('Pop socket', 10, document.getElementById('quantity-Pop socket').value, 'quantity-Pop socket')"
         >
-          Add to cart
+            Add to cart
         </button>
         <input
-          type="number"
-          id="quantity-Pop socket"
-          class="quantity-input"
-          min="1"
+            type="number"
+            id="quantity-Pop socket"
+            class="quantity-input"
+            min="1"
         />
-      </div>
+    </div>
 
-      <div class="product img">
+    <div class="product img">
         <img
-          src=" c:\Users\User\OneDrive\Desktop\Web cw\bottle.jpeg"
-          alt="bottle"
-          width="100"
-          height="100"
+            src=" c:\Users\User\OneDrive\Desktop\Web cw\bottle.jpeg"
+            alt="bottle"
+            width="100"
+            height="100"
         />
         <p><b>Bottle </b></p>
         <p>Price: $30</p>
         <form>
-          <label for="colour">Colour:</label>
-          <input type="color" id="colour" name="colour" /><br />
+            <label for="colour">Colour:</label>
+            <input type="color" id="colour" name="colour"/><br/>
         </form>
-        <br />
+        <br/>
 
         <button
-          onclick="addToCart('Bottle ', 30, document.getElementById('quantity-Bottle ').value, 'quantity-Bottle ')"
+            onclick="addToCart('Bottle ', 30, document.getElementById('quantity-Bottle ').value, 'quantity-Bottle ')"
         >
-          Add to cart
+            Add to cart
         </button>
         <input
-          type="number"
-          id="quantity-Bottle "
-          class="quantity-input"
-          min="1"
+            type="number"
+            id="quantity-Bottle "
+            class="quantity-input"
+            min="1"
         />
-      </div>
     </div>
+</div>
 
-    <br />
-    <br />
+<br/>
+<br/>
 
-    <br />
-    <form name="customerdetails" id="customerdetails">
-      <div class="customerdetails">
+<br/>
+<form name="customerdetails" id="customerdetails">
+    <div class="customerdetails">
         <h1 style="align-items: left; text-align: left">Customer Details</h1>
         <form>
-          <label
+            <label
             >Full name:
-            <input type="text" name="name" size="20" />
-          </label>
-          <br />
-          <br />
-          <label for="tel"
+                <input type="text" name="name" size="20"/>
+            </label>
+            <br/>
+            <br/>
+            <label for="tel"
             >Telephone number:
-            <input type="tel" id="tel" name="tel" />
+                <input type="tel" id="tel" name="tel"/>
 
-            <br />
-            <br />
-          </label>
+                <br/>
+                <br/>
+            </label>
 
-          <label>
-            Address:
-            <input type="text" name="address" size="30" />
-          </label>
+            <label>
+                Address:
+                <input type="text" name="address" size="30"/>
+            </label>
 
-          <br />
-          <br />
-          <label for="email">E mail:</label>
-          <input type="email" id="email" name="email" />
+            <br/>
+            <br/>
+            <label for="email">E mail:</label>
+            <input type="email" id="email" name="email"/>
         </form>
-        <br />
-      </div>
+        <br/>
+    </div>
 
-      <div id="cart">
+    <div id="cart">
         <h2>Shopping Cart</h2>
 
         <ul id="cart-items"></ul>
         <h2>Total: $<span id="total-price">0</span></h2>
-      </div>
+    </div>
 
-      <br />
-      <br />
-      <b>*SHIPPING FREE* </b>
-      <br />
-    </form>
+    <br/>
+    <br/>
+    <b>*SHIPPING FREE* </b>
+    <br/>
+</form>
 
-    <br />
-    <br />
-  </body>
+<br/>
+<br/>
+</body>
 </html>
