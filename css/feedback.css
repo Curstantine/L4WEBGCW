@@ -1,7 +1,7 @@
 main {
     max-width: 32rem;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 2rem 0 1rem;
 }
 
 h1 {
@@ -94,5 +94,5 @@ button[type="submit"] {
 }
 
 .page-editor-credits {
-    /*padding-top: 2rem;*/
+    padding-top: 2rem;
 }

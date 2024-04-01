@@ -91,7 +91,7 @@ body {
     margin: 0 auto;
 }
 
-.page-editor-credits {
+.page-editor-credits a {
     color: var(--text-muted);
     font-size: 0.875rem;
 }

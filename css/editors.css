@@ -1,27 +1,40 @@
 main {
-    max-width: 36rem;
-    margin: 0 auto;
+    max-width: 48rem;
     padding-bottom: 2rem;
+    margin: 0 auto;
+    height: 75lvh;
 }
 
-.metadata {
-    display: grid;
-    grid-template-columns: 8ch 1fr;
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.metadata :nth-child(odd) {
+table th, table tr {
+    text-align: start;
+    height: 2rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+
+    transition: background-color var(--duration-standard) var(--easing-standard);
+}
+
+table tbody tr:nth-child(even) {
+    background-color: hsl(from var(--background) h s 94%);
+}
+
+table tbody tr:hover {
+    background-color: hsl(from var(--background) h s 90%);
+}
+
+td, th {
+    padding: 0 0.5rem;
+}
+
+td a {
     color: var(--text);
-    font-weight: 500;
 }
 
-article {
-    margin-top: 2rem;
-}
-
-article h2, article p {
-    margin: 0;
-}
-
-article h2 {
-    line-height: 1.625;
+.page-editor-credits {
+    margin-top: 0.5rem;
 }
