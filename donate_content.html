@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>content page</title>
+    <link rel="stylesheet" href="L4WEBGCW/index.css"/>
+    <script defer type="module" src="L4WEBGCW/index.js"></script>
+    <style>
+        body {
+            text-align: center;
+            color:#2E9ED0;
+        }
+        .water {
+            display: inline-block;
+            position: relative;
+            padding: 10px;
+            
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20%;
+            transition: filter 0.3s ease;
+        }
+        .text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            border-radius: 20%;
+            transform: translateY(0);
+            transition: transform 0.4s ease, opacity 0.3s ease;
+            color: black;
+            background-color: #5b8eb1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .water:hover .text {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        .water:hover img {
+            filter: brightness(50%);
+        }
+        .donate{
+            margin-top: 4%;
+            display: inline-block;
+            text-align: center;
+            background-color: #00AEEF;
+            color:#fff;
+            border-radius: 15px;
+            height: 300px;
+            width: 600px;
+            padding: 10px;
+        }
+        li{
+            padding: 5px;
+        }
+        #heart{
+            color: red;
+            font-size: 5rem;
+            margin-top: 1rem;
+            margin-bottom:2rem;
+        }
+        #creater{
+        text-align:left;
+        font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <nav></nav>
+    <h1>Donate to support waterwafer</h1>
+    <div id="why">
+        <p>Statistically according to world health organization (WHO) 1 out of 4 people on earth lack the basic necessity that is clean water</p>
+        <h3>Help the needy. Are you ready to be a global hero</h3>
+    
+        <div class="water">
+            <img src="https://th.bing.com/th/id/OIP.DyvCKTr8Ctjop1SS9TsYBgD6D6?pid=ImgDet&w=194&h=194&c=7&dpr=1.5" alt="girl getting water from a tap">
+            <p class="text">2 billion people do not have safe water. Water is life's most precious resource. Yet, millions around the globe lack access to clean water</p>
+        </div>
+        <div class="water">
+            <img src="https://th.bing.com/th/id/OIP.rcPiIN1D8N9a42pykcbb8AAAAA?pid=ImgDet&w=194&h=194&c=7&dpr=1.5" alt="boy drinking">
+            <p class="text">Sanitation is a fundamental human right that many are still deprived of. Access to proper sanitation facilities is crucial for preventing disease, promoting hygiene, and maintaining dignity.</p>
+        </div>
+        
+    </div>
+    
+    <div class="donate">
+    <h2>Why donate to waterwafer</h2>
+    <ul>
+        <li>All donations are used for the betterment of people who have been suffering from water scarcity</li>
+        <li>Tragerted impact on taking initiative to support lives that suffer from water scarcity and hygenic issues</li>
+        <li>we have a open website that enables community involment on fostering efficiency, sustainability and empowerment</li>
+    </ul>
+    </div>
+
+    <div class="donate">
+        <h2>How we use your donations</h2>
+        <ul>
+            <li>water infrastructure: building wells, water tanks, pipelines to give the community acess to water sources</li>
+            <li>Sanitation facilities: building latrines, toilets, proper waste management and promoting</li>
+            <li>hygiene promotion: implementing hygiene education programs, distributing hygiene kits and keeping campaigns</li>
+        </ul>
+    </div>
+    <br>
+    <p></p>
+    <a href="#"><button id="heart">&#x2764;Donate</button></a>
+    <div id="creater">
+        <a href="editor.html"><sup>Created by Miyuni Lowe</sup></a>
+    </div>
+
+    
+<footer></footer>
+</body>
+</html>

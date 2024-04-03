@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Profile customization</title>
+<meta charset="UTF-8">
+    <link rel="stylesheet" href="L4WEBGCW/index.css"/>
+    <script defer type="module" src="L4WEBGCW/index.js"></script>
+<style>
+
+    .profile{
+        height: 85lvh;
+        max-width: 600px;
+        text-align: center;
+        margin: 0 auto;
+        border: 1px solid #4A8CD6;
+        border-radius: 5px;
+    }
+    .output{
+        margin-top: 25px;
+        border: 1px solid #4A8CD6;
+        border-radius: 5px;
+        text-align: left;
+    }
+
+    .progress-bar{
+        margin-top: 5px;
+        width: 100%;
+        height: 25px;
+        background-color: white;
+    }
+    .progress{
+        height: 100%;
+        background-color:#4A8CD6;
+    }
+    .skip-button{
+        background-color: #4A8CD6;
+        width: 55px;
+        border-radius: 50px;;
+        border: none;
+        margin-left: 10px;
+        margin-top: 5px;
+        padding: 5px;
+    }
+    .next-button{
+        background-color: #4A8CD6;
+        width: 55px;
+        border-radius: 50px;;
+        border: none;
+        margin-left: 10px;
+        margin-top: 5px;
+        padding: 5px;
+    }
+    #creater{
+        text-align:left;
+        font-style: italic;
+        }
+         
+</style>
+</head>
+
+<body>
+<nav></nav>
+    <div class="profile">
+        <h1>Welcome to your profile</h1>
+
+        <div id="prompts">
+            <!-- Prompts will be dynamically added here -->
+        </div>
+
+       <div class="output">
+            <h3>Profile:</h3>
+            <div id="user-output"></div>
+       </div>
+
+        <div id="progress-container">
+            <div class="progress-bar">
+                <div id="progress" class="progress"></div>
+            </div>
+        </div>
+
+        <div id="display"></div>
+    </div>
+<div id="creater">
+    <a href="editor.html"><sup>Created by Miyuni Lowe</sup></a>
+</div>
+
+    <script>
+        // Define prompts and steps
+        const prompts = [
+            {
+                category: 'Step 1: Personal Details',
+                prompts: [
+                    'Name: ',
+                    'Gender: ',
+                    'Age: '
+                ]
+            },{
+                category: 'Step 2: Volunteering',
+                prompts: [
+                    'Interest: ',
+                    'Task: ',
+                    'Cause: '
+                ]
+            },{
+                category: 'Step 3: Qualifications',
+                prompts: [
+                    'Study major: ',
+                    'University: ',
+                    'Completion year: ',
+                ]
+            },{
+                category:'Step 4: Contact',
+                prompts:[
+                    'Email address: ',
+                    'Telephone number: ',
+                    'Country: '
+                ]
+            }
+        ];
+
+        let new_step = 0;
+        let new_prompt = 0;
+        let userOutput = {};
+        let skippedPrompts = [];
+
+        function PromptDisplay() {
+            const promptsContainer = document.getElementById('prompts');
+            promptsContainer.innerHTML = '';
+
+            const prompt = prompts[new_step].prompts[new_prompt];
+            const promptElement = document.createElement('div');
+            promptElement.classList.add('prompt');
+            promptElement.textContent = prompt;
+
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.addEventListener('keyup', (event) => {
+                if (event.key === 'Enter') {
+                    handleUserInput(event.target.value);
+                }
+            });
+
+            promptElement.appendChild(input);
+            promptsContainer.appendChild(promptElement);
+
+            const buttonContainer = document.createElement('div');
+
+            const nextButton = document.createElement('button');
+            nextButton.textContent = 'Next';
+            nextButton.classList.add('next-button');
+            nextButton.addEventListener('click', () => handleUserInput(input.value));
+            buttonContainer.appendChild(nextButton);
+            
+            const skipButton = document.createElement('button');
+            skipButton.textContent = 'Skip';
+            skipButton.classList.add('skip-button');
+            skipButton.addEventListener('click', skipPrompt);
+            buttonContainer.appendChild(skipButton);
+
+            promptsContainer.appendChild(buttonContainer);
+        }
+
+        function handleUserInput(value) {
+            const category = prompts[new_step].category;
+            if (!userOutput[category]) {
+                userOutput[category] = [];
+            }
+            const promptText = prompts[new_step].prompts[new_prompt];
+            userOutput[category].push({ prompt: promptText, answer: value });
+
+            updateUserOutput();
+            ProgressUpdate();
+
+            new_prompt++;
+            if (new_prompt < prompts[new_step].prompts.length) {
+                PromptDisplay();
+            } else {
+                new_step++;
+                new_prompt = 0;
+                if (new_step < prompts.length) {
+                    PromptDisplay();
+                } else {
+                    ProfileComplete();
+                }
+            }
+        }
+
+        function skipPrompt() {
+            const prompt = prompts[new_step].prompts[new_prompt];
+            skippedPrompts.push({ prompt: prompt, category: prompts[new_step].category });
+            new_prompt++;
+            if (new_prompt < prompts[new_step].prompts.length) {
+                PromptDisplay();
+            } else {
+                new_step++;
+                new_prompt = 0;
+                if (new_step < prompts.length) {
+                    PromptDisplay();
+                } else {
+                    ProfileComplete();
+                }
+            }
+        }
+
+        function updateUserOutput() {
+            const outputContainer = document.getElementById('user-output');
+            outputContainer.innerHTML = '';
+
+            for (const category in userOutput) {
+                const categoryElement = document.createElement('div');
+                categoryElement.textContent = `${category}:`;
+                outputContainer.appendChild(categoryElement);
+
+                const listElement = document.createElement('ul');
+                for (const item of userOutput[category]) {
+                    const listItemElement = document.createElement('li');
+                    
+                    listItemElement.textContent = `${item.prompt} ${item.answer}`;
+                    const editButton = document.createElement('button');
+                    editButton.textContent = 'Edit';
+                    editButton.addEventListener('click', () => {
+                        const newValue = prompt('Edit this answer:', item.answer);
+                        if (newValue !== null) {
+                            item.answer = newValue;
+                            listItemElement.textContent = `${item.prompt} ${item.answer}`;
+                        }
+                    });
+                    listItemElement.appendChild(editButton);
+                    listElement.appendChild(listItemElement);
+                }
+                outputContainer.appendChild(listElement);
+            }
+
+            if (skippedPrompts.length > 0) {
+                const skippedSection = document.createElement('div');
+                skippedSection.textContent = 'Skipped Prompts:';
+                outputContainer.appendChild(skippedSection);
+
+                const skippedList = document.createElement('ul');
+                for (const skippedPrompt of skippedPrompts) {
+                   
+                    const promptElement = document.createElement('li');
+                    promptElement.textContent = skippedPrompt.prompt;
+                    
+                    const answerButton = document.createElement('button');
+                    answerButton.textContent = 'Answer';
+                    answerButton.addEventListener('click', () => {
+                        const answer = prompt('Answer skipped question: ' + skippedPrompt.prompt);
+                        if (answer !== null) {
+                            if (!userOutput[skippedPrompt.category]) {
+                                userOutput[skippedPrompt.category] = [];
+                            }
+                            userOutput[skippedPrompt.category].push({ prompt: skippedPrompt.prompt, answer: answer });
+                            skippedPrompts = skippedPrompts.filter(p => p.prompt !== skippedPrompt.prompt);
+                            updateUserOutput();
+                            ProgressUpdate();
+                        }
+                    });
+                    promptElement.appendChild(answerButton);
+                    skippedList.appendChild(promptElement);
+                }
+                outputContainer.appendChild(skippedList);
+            }
+        }
+
+        function ProgressUpdate() {
+            const totalPrompts = prompts.reduce((sum, step) => sum + step.prompts.length, 0);
+            const completedPrompts = Object.values(userOutput).flat().length;
+            const progress = (completedPrompts / totalPrompts) * 100;
+
+            const progressBar = document.getElementById('progress');
+            progressBar.style.width = `${progress}%`;
+            progressBar.textContent = `${progress.toFixed(0)}%`;
+
+            const display = document.getElementById('display');
+            display.textContent = `Profile Completion: ${progress.toFixed(0)}%`;
+        }
+
+        function ProfileComplete() {
+            const display = document.getElementById('display');
+            display.textContent = 'Profile completed successfully!';
+
+            const promptsContainer = document.getElementById('prompts');
+            promptsContainer.style.display = 'none';
+
+            const progressContainer = document.getElementById('progress-container');
+            progressContainer.style.display = 'none';
+        }
+
+        // Start the profile building process
+        PromptDisplay();
+    </script>
+<footer></footer>
+</body>
+</html>

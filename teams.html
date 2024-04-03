@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teams</title>
+    <link rel="stylesheet" href="L4WEBGCW/index.css"/>
+    <script defer type="module" src="L4WEBGCW/index.js"></script>
+<style>
+        #main{
+            text-align: center;
+            margin:6%;
+
+        }
+        .images{
+            display: inline-block;
+            position: relative;
+            width: 20vw;
+            max-width:200px;
+            margin: 20px;
+        }
+
+        img{
+            margin-top: 10%;
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+            margin: 20px;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        .text{
+            position: absolute;
+            bottom: 0;
+            left: 5px;
+            right: 5px;
+            opacity: 0;
+            transform: translateY(80%);
+            transition: transform 0.3s ease;
+            color:black;
+            background-color: #5b8eb1;
+        }
+
+        .images:hover img{
+           transform: scale(1.2);
+           opacity: 0.8;
+           box-shadow: 0 4px 20px steelblue;
+          }
+        .images:hover .text{
+           transform: translateY(0);
+           opacity: 0.7;
+          }
+        #creater{
+        text-align:left;
+        font-style: italic;
+        }
+
+</style>
+</head>
+<body>
+<nav></nav>
+<div id="main">
+    <h1>Introducing the team</h1>
+    <h3> about us - Hover over the images for details</h3>
+
+    <div class="images">
+        <img src="https://avatars.githubusercontent.com/Dilethni" alt="Student 1">
+        <div class ="text">
+        <h1>Dilethni Abeysingha</h1>
+        <p>Role: Student 1</p>
+        <p>Tasks:Ssplash screen and shop</p>
+        </div>
+    </div>
+
+    <div class = "images">
+        <img src="https://avatars.githubusercontent.com/u/69104500?v=4" alt="Student 2">
+        <div class ="text">
+        <h1>Rachala Ovin</h1>
+        <p>Role: Studen 2</p>
+        <p>Tasks : Home page and Feedback</p>
+        </div>
+    </div>
+
+    <div class="images">
+        <img src="https://avatars.githubusercontent.com/u/163494050?v=4" alt="Student 3">
+        <div class ="text">
+        <h1>Miyuni Lowe</h1>
+        <p>Role : Student 3</p>
+        <p>Tasks: User profile and team</p>
+        </div>
+    </div>
+
+    <div class="images">
+        <img src="https://avatars.githubusercontent.com/u/163982753?v=4" alt="Student 4">
+        <div class ="text">
+        <h1>Hirushi</h1>
+        <p>role: Student 4</p>
+        <p>Tasks: Gallery and sitemap</p>
+        </div>
+    </div>
+</div>
+<div id="creater">
+    <a href="editor.html"><sup>Created by Miyuni Lowe</sup></a>
+</div>
+<footer></footer>
+</body>
+</html>
