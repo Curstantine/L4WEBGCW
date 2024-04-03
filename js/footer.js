@@ -1,7 +1,7 @@
 export default function initializeFooter() {
     const footer = document.getElementsByTagName("footer")[0];
 
-    footer.innerHTML = /*html*/`
+    footer.innerHTML = /*html*/ `
        <div class="footer-content container">
             <img alt="WaterWafer" src="/assets/logo.svg" style="margin-top: 4px" />
         

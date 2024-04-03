@@ -15,10 +15,10 @@
     --error-foreground: hsl(0, 70%, 35%);
     --error-background: hsl(0, 93%, 94%);
 
-    --easing-standard: cubic-bezier(0.2, 0.0, 0, 1.0);
+    --easing-standard: cubic-bezier(0.2, 0, 0, 1);
     --duration-standard: 300ms;
 
-    font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+    font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
     font-weight: normal;
     color-scheme: light;
     scroll-behavior: smooth;
@@ -43,13 +43,13 @@ body {
     box-sizing: border-box;
 }
 
-
 /* *****    Utility    ***** */
 .spacer {
     flex: 1;
 }
 
-.btn-ghost, .btn-primary {
+.btn-ghost,
+.btn-primary {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -102,7 +102,12 @@ label.required:after {
     display: inline;
 }
 
-input[type="text"], input[type="email"], input[type="name"], input[type="tel"], textarea {
+input[type="text"],
+input[type="email"],
+input[type="name"],
+input[type="tel"],
+input[type="password"],
+textarea {
     appearance: none;
     height: 2rem;
     border-radius: 0.25rem;
@@ -117,16 +122,28 @@ input[type="text"], input[type="email"], input[type="name"], input[type="tel"], 
     border: 1px solid hsl(from var(--border) h s 80%);
 }
 
-input[type="text"]:active, input[type="email"]:active,
-input[type="name"]:active, input[type="tel"]:active, textarea:active,
-input[type="text"]:focus, input[type="email"]:focus,
-input[type="name"]:focus, input[type="tel"]:focus, textarea:focus {
+input[type="text"]:active,
+input[type="email"]:active,
+input[type="name"]:active,
+input[type="tel"]:active,
+input[type="password"]:active,
+textarea:active,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="name"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus,
+textarea:focus {
     outline: none;
     border-color: var(--primary);
 }
 
-input.invalid, input.invalid:active, input.invalid:focus,
-textarea.invalid, textarea.invalid:active, textarea.invalid:focus {
+input.invalid,
+input.invalid:active,
+input.invalid:focus,
+textarea.invalid,
+textarea.invalid:active,
+textarea.invalid:focus {
     border-color: var(--error-foreground);
     background-color: var(--error-background);
 }
