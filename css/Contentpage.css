@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: hsl(200, 98%, 39%, 1);
+    color: #fff;
+    padding: 5px 20px;
+    text-align: center;
+}
+
+.nav2 {
+    background-color: #f4f4f4;
+    padding: 10px 20px;
+}
+.nav2 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.nav2 ul li {
+    display: inline;
+    margin-right: 20px;
+    margin-left: 15px;
+}
+
+.nav2 ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.nav2 ul li a:hover {
+    color:blue;
+}
+
+section {
+    padding: 10px;
+    bottom: 5px;
+}
+
+
+
+section {
+	min-height: 100vh;
+	padding: 10rem;
+	
+}
+#Conclusion,
+#method,
+#importance,
+#Innovation,
+#role{
+	padding: 10rem;
+}
+
+.content-section p,
+.content-section ul{
+	font-size: 20px;
+}
+
+
+
+/* BACK TO TOP */
+
+html {
+	scroll-behavior: smooth;
+}
+
+.back-to-top {
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #dc143c;
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+	text-decoration: none;
+	transition: 0.2s ease-out;
+}
+
+.back-to-top span {
+	color: white;
+	font-size: 3rem;
+	transition: 0.2s ease-out;
+}
+
+.back-to-top:hover {
+	background-color: red;
+}
+.back-to-top:hover span {
+	transform: translateY(-4px);
+}
+
+.images{
+    float: right;
+    width: 500px;
+    height: 600px;
+    position: relative;
+    left:50px;
+}
+.images2{
+    float: left;
+    width: 500px;
+    height: 600px;
+    position: relative;
+    right:50px;
+    
+}
+.material-icons{
+    width:90px;
+    height: 90px;
+    
+
+}
+.arrow{
+    font-size: 60px;
+    text-align: center;
+    position: relative;
+    bottom:28px;
+
+}
+h1{
+    font-size: 55px;
+    text-align: center;
+    
+}
+h2{
+    
+    background-color: hsl(200, 98%, 39%, 1);
+    text-align: center;
+    
+}
