@@ -35,7 +35,7 @@ header {
 }
 
 .nav2 ul li a:hover {
-    color:blue;
+    color: blue;
 }
 
 section {
@@ -43,97 +43,85 @@ section {
     bottom: 5px;
 }
 
-
-
 section {
-	min-height: 100vh;
-	padding: 10rem;
-	
+    min-height: 100vh;
+    padding: 10rem;
 }
 #Conclusion,
 #method,
 #importance,
 #Innovation,
-#role{
-	padding: 10rem;
+#role {
+    padding: 10rem;
 }
 
 .content-section p,
-.content-section ul{
-	font-size: 20px;
+.content-section ul {
+    font-size: 20px;
 }
-
-
 
 /* BACK TO TOP */
 
 html {
-	scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 .back-to-top {
-	position: fixed;
-	bottom: 2rem;
-	right: 2rem;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #dc143c;
-	border-radius: 0.5rem;
-	padding: 0.5rem;
-	text-decoration: none;
-	transition: 0.2s ease-out;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dc143c;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    text-decoration: none;
+    transition: 0.2s ease-out;
 }
 
 .back-to-top span {
-	color: white;
-	font-size: 3rem;
-	transition: 0.2s ease-out;
+    color: white;
+    font-size: 3rem;
+    transition: 0.2s ease-out;
 }
 
 .back-to-top:hover {
-	background-color: red;
+    background-color: red;
 }
 .back-to-top:hover span {
-	transform: translateY(-4px);
+    transform: translateY(-4px);
 }
 
-.images{
+.images {
     float: right;
     width: 500px;
     height: 600px;
     position: relative;
-    left:50px;
+    left: 50px;
 }
-.images2{
+.images2 {
     float: left;
     width: 500px;
     height: 600px;
     position: relative;
-    right:50px;
-    
+    right: 50px;
 }
-.material-icons{
-    width:90px;
+.material-icons {
+    width: 90px;
     height: 90px;
-    
-
 }
-.arrow{
+.arrow {
     font-size: 60px;
     text-align: center;
     position: relative;
-    bottom:28px;
-
+    bottom: 28px;
 }
-h1{
+h1 {
     font-size: 55px;
     text-align: center;
-    
 }
-h2{
-    
+h2 {
     background-color: hsl(200, 98%, 39%, 1);
     text-align: center;
-    
 }
