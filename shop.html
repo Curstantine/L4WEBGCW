@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" >
-        <meta name="viewport" content="width=device-width,initial-scale=1.0" >
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 
         <script type="module" src="./index.js"></script>
 
-        <link rel="stylesheet" href="./index.css" >
-        <link rel="stylesheet" href="./css/shop.css" >
+        <link rel="stylesheet" href="./index.css" />
+        <link rel="stylesheet" href="./css/shop.css" />
 
         <title>WaterWafer - Shop</title>
 
@@ -63,23 +63,22 @@
     </head>
 
     <body>
+        <img src="./assets/logo.svg" alt="logo" />
 
-    <img src="./assets/logo.svg" alt="logo" />
-
-    <div class="navbar">
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="#">Query</a></li>
-                <li><a href="#">Feedback</a></li>
-                <li><a href="#">User Profile</a></li>
-                <li><a href="#">Sitemap</a></li>
-                <li><a href="about.html">About us</a></li>
-            </ul>
-        </nav>
-    </div>
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="#">Query</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="#">User Profile</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="about.html">About us</a></li>
+                </ul>
+            </nav>
+        </div>
 
         <main class="container">
             <h1>Shop with us</h1>
@@ -93,7 +92,7 @@
                         height="140"
                         alt=""
                         aria-hidden="true"
-                    >
+                    />
                 </div>
 
                 <div class="option_box">
@@ -104,7 +103,7 @@
                         height="140"
                         alt=""
                         aria-hidden="true"
-                >
+                    />
                 </div>
 
                 <div class="option_box">
@@ -115,16 +114,14 @@
                         height="140"
                         alt=""
                         aria-hidden="true"
-                    >
-
+                    />
                 </div>
-                
             </article>
 
             <article class="product">
                 <div class="product img">
-                    <br>
-                    <img src="./assets/tshirt.jpeg" alt="tshirt" width="100" height="100" >
+                    <br />
+                    <img src="./assets/tshirt.jpeg" alt="tshirt" width="100" height="100" />
                     <p><b>Unisex T shirt</b></p>
                     <p>Price: $25</p>
                     <form>
@@ -136,9 +133,9 @@
                             <option value="XL">XL</option>
                         </select>
                         <label for="colour">Colour:</label>
-                        <input type="color"  name="colour" ><br >
-                        <br >
-                        <br >
+                        <input type="color" name="colour" /><br />
+                        <br />
+                        <br />
                     </form>
 
                     <button
@@ -151,11 +148,11 @@
                         id="quantity-Unisex Tshirt"
                         class="quantity-input"
                         min="1"
-                    >
+                    />
                 </div>
 
                 <div class="product img">
-                    <img src="./assets/hoodie.jpeg" alt="hoodie" width="100" height="100" >
+                    <img src="./assets/hoodie.jpeg" alt="hoodie" width="100" height="100" />
                     <p><b>Hoodie</b></p>
                     <p>Price: $45</p>
                     <form>
@@ -168,10 +165,10 @@
                         </select>
 
                         <label for="colour">Colour:</label>
-                        <input type="color" id="color" name="colour" ><br>
+                        <input type="color" id="color" name="colour" /><br />
 
-                        <br>
-                        <br>
+                        <br />
+                        <br />
                     </form>
 
                     <button
@@ -179,80 +176,80 @@
                     >
                         Add to cart
                     </button>
-                    <input type="number"  class="quantity-input" min="1" >
+                    <input type="number" class="quantity-input" min="1" />
                 </div>
 
                 <div class="product img">
-                    <img src="./assets/cap.jpeg" alt="cap" width="100" height="100" >
+                    <img src="./assets/cap.jpeg" alt="cap" width="100" height="100" />
                     <p><b>Cap </b></p>
                     <p>Price: $15</p>
                     <form>
                         <label for="colour">Colour:</label>
-                        <input type="color" id="colour" name="colour" ><br>
+                        <input type="color" id="colour" name="colour" /><br />
                     </form>
-                    <br>
+                    <br />
 
                     <button
                         onclick="addToCart('Cap ', 15, document.getElementById('quantity-Cap ').value, 'quantity-Cap ')"
                     >
                         Add to cart
                     </button>
-                    <input type="number"  class="quantity-input" min="1" >
+                    <input type="number" class="quantity-input" min="1" />
                 </div>
 
-                <br>
+                <br />
 
                 <div class="product img">
-                    <img src="./assets/hat.jpeg" alt="hat" width="100" height="100" >
+                    <img src="./assets/hat.jpeg" alt="hat" width="100" height="100" />
                     <p><b>Hat</b></p>
                     <p>Price: $25</p>
                     <form>
                         <label for="colour">Colour:</label>
-                        <input type="color"  name="colour" ><br>
+                        <input type="color" name="colour" /><br />
                     </form>
-                    <br>
+                    <br />
 
                     <button
                         onclick="addToCart('Hat', 25, document.getElementById('quantity-Hat').value, 'quantity-Hat')"
                     >
                         Add to cart
                     </button>
-                    <input type="number" class="quantity-input" min="1" >
+                    <input type="number" class="quantity-input" min="1" />
                 </div>
 
                 <div class="product img">
-                    <img src="./assets/popsocket.jpeg" alt="popsocket" width="100" height="100" >
+                    <img src="./assets/popsocket.jpeg" alt="popsocket" width="100" height="100" />
                     <p><b>Pop Socket </b></p>
                     <p>Price: $10</p>
                     <form>
                         <label for="colour">Colour:</label>
-                        <input type="color" name="colour" ><br>
+                        <input type="color" name="colour" /><br />
                     </form>
-                    <br>
+                    <br />
                     <button
                         onclick="addToCart('Pop socket', 10, document.getElementById('quantity-Pop socket').value, 'quantity-Pop socket')"
                     >
                         Add to cart
                     </button>
-                    <input type="number"  class="quantity-input" min="1" >
+                    <input type="number" class="quantity-input" min="1" />
                 </div>
 
                 <div class="product img">
-                    <img src=" ./assets/bottle.jpeg" alt="bottle" width="100" height="100" >
+                    <img src=" ./assets/bottle.jpeg" alt="bottle" width="100" height="100" />
                     <p><b>Bottle </b></p>
                     <p>Price: $30</p>
                     <form>
                         <label for="colour">Colour:</label>
-                        <input type="color"  name="colour" ><br>
+                        <input type="color" name="colour" /><br />
                     </form>
-                    <br>
+                    <br />
 
                     <button
                         onclick="addToCart('Bottle ', 30, document.getElementById('quantity-Bottle ').value, 'quantity-Bottle ')"
                     >
                         Add to cart
                     </button>
-                    <input type="number"  class="quantity-input" min="1" >
+                    <input type="number" class="quantity-input" min="1" />
                 </div>
             </article>
 
@@ -261,16 +258,16 @@
                     <h2>Customer Details</h2>
                     <form name="customerdetails" id="customerdetails">
                         <label for="name">Full name:</label>
-                        <input id="name" type="text" name="name" size="20" >
+                        <input id="name" type="text" name="name" size="20" />
 
                         <label for="tel">Telephone number:</label>
-                        <input id="tel" type="tel" name="tel" >
+                        <input id="tel" type="tel" name="tel" />
 
                         <label for="address">Address:</label>
-                        <input id="address" type="text" name="address" size="30" >
+                        <input id="address" type="text" name="address" size="30" />
 
                         <label for="email">Email:</label>
-                        <input id="email" type="email" name="email" >
+                        <input id="email" type="email" name="email" />
                     </form>
                 </div>
 
