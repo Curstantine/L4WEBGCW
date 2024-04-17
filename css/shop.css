@@ -1,87 +1,139 @@
-#products {
-  display: flex;
-  flex-wrap: wrap;
+h1 {
+    line-height: 1.25;
+    margin: 2rem 0 0 2rem;
+}
 
+#products {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .product {
-  border:none;
-  border-radius: 5px;
-  padding: 50px;
-  margin-bottom: 2px;
-  width: fit-content;
-  display: inline-block;
-  color: rgb(9, 2, 77);
-  cursor: pointer;
-  background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    padding: 50px;
+    margin-bottom: 2px;
+    width: fit-content;
+    display: inline-block;
+    color: var(--text);
+    cursor: pointer;
 }
 
 .product img {
-  height: 100px;
-  max-width: 100%;
-  border-radius: 5px;
+    height: 100px;
+    max-width: 100%;
+    border-radius: 5px;
 }
 
 .option_box {
-  border: none;
+    border: none;
 
-  padding: 30px;
-  margin-bottom: 2px;
-  width: fit-content;
-  display: inline-block;
+    padding: 30px;
+    margin-bottom: 2px;
+    width: fit-content;
+    display: inline-block;
 }
 
-.customerdetails {
-  border: 2px solid black;
-  border-radius: 5px;
-  padding: 15px;
+article.checkout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: center;
+    margin-bottom: 2rem;
 }
 
-.cart {
-  margin-top: 20px;
-  border: 2px solid black;
-  border-radius: 5px;
-  padding: 15px;
+.customer-details {
+    width: 32rem;
+    padding: 2rem;
+    border: 2px solid var(--border);
+    border-radius: 1rem;
+}
+
+.customer-details h2 {
+    margin: 0 0 1rem;
+}
+
+.customer-details form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.customer-details form label {
+    width: 12rem;
+}
+
+#cart {
+    justify-self: start;
+    align-self: center;
+}
+
+#cart h2 {
+    margin: 0 0 1rem 0;
+}
+
+#cart b {
+    font-size: 1.125rem;
 }
 
 .cart-items {
-  color: black;
+    color: var(--text-muted);
 }
 
-
-
 #Total-Final-Bill {
-  border-radius: 15px;
-  display: block;
-  margin: 20px auto 0;
-  width: 30%;
-  background-color: #468fa1;
-  color: #f9f9f9;
-  padding: 20px;
-  cursor: pointer;
-  font-size: 20px;
-  border: none;
+    border-radius: 15px;
+    display: block;
+    margin: 20px auto 0;
+    width: 30%;
+    background-color: #468fa1;
+    color: #f9f9f9;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
 }
 
 #Total-Final-Bill button:hover {
-  background-color: #171427;
-  border: none;
-  transition: 0.4s;
+    background-color: #171427;
+    border: none;
+    transition: 0.4s;
 }
 
 ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 li {
-  float: left;
+    float: left;
 }
 
 li a {
-  display: block;
-  padding: 8px;
-  background-color: aliceblue;
+    display: block;
+    padding: 8px;
+    background-color: aliceblue;
+}
+
+/**/
+.anchor {
+    margin-left: 100px;
+    border: 3px black solid;
+    background-color: var(--border);
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.anchor .anchor {
+    color: black;
+}
+
+.anchor:hover {
+    background-color: transparent;
 }

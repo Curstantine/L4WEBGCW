@@ -17,7 +17,9 @@ form.addEventListener("submit", (e) => {
     const email = formEmail.value.trim();
     const name = formName.value.trim();
     const content = formContent.value.trim();
-    const satisfaction = formSatisfied.value !== null ? Number.parseInt(formSatisfied.value.trim()) : null;
+    const satisfaction = formSatisfied.value !== null
+        ? Number.parseInt(formSatisfied.value.trim())
+        : null;
 
     let err = false;
 
@@ -29,7 +31,7 @@ form.addEventListener("submit", (e) => {
     const setError = (x, y) => {
         err = true;
         setErrorToField(x, y);
-    }
+    };
 
     if (formName.validity.tooShort) {
         setError(formName, "Please enter a name longer than 3 characters!");
@@ -46,7 +48,6 @@ form.addEventListener("submit", (e) => {
     if (formContent.validity.tooShort) {
         setError(formContent, "Content should be at least 10 characters!");
     }
-
 
     e.preventDefault();
     if (!err) replaceFormWithCompletion();
@@ -70,7 +71,7 @@ function cleanErrorsOnInput(e) {
 function setErrorToField(where, message) {
     const isPopulated = where.classList.contains("invalid");
 
-    const inner = /*html*/`
+    const inner = /*html*/ `
         <span id="error-message" data-parent="${where.id}">${message}</span>
     `;
 
@@ -103,7 +104,7 @@ function replaceFormWithCompletion() {
 
     window.scroll(0, 0);
 
-    main.innerHTML = /*html*/`
+    main.innerHTML = /*html*/ `
         <div id="completion">
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
                 <path fill="currentColor" d="m382-354 339-339q12-12 28.5-12t28.5 12q12 12 12 28.5T778-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z"/>

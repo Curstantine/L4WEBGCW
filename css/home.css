@@ -17,7 +17,8 @@ article h2 {
     color: hsl(from var(--primary) h s 20%);
 }
 
-.hero img, article img {
+.hero img,
+article img {
     grid-area: image;
     align-self: center;
     border-radius: 2rem;
@@ -69,7 +70,8 @@ article .description {
     color: var(--primary);
 }
 
-.hero-content .phrase .decoration-1, .hero-content .phrase .decoration-2 {
+.hero-content .phrase .decoration-1,
+.hero-content .phrase .decoration-2 {
     position: absolute;
     width: 15rem;
     height: fit-content;
@@ -166,7 +168,7 @@ article .description {
 
     color: var(--text-muted);
     text-decoration: none;
-    transition-property: color,border-color;
+    transition-property: color, border-color;
     transition-duration: var(--duration-standard);
     transition-timing-function: var(--easing-standard);
 }

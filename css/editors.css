@@ -10,7 +10,8 @@ table {
     border-collapse: collapse;
 }
 
-table th, table tr {
+table th,
+table tr {
     text-align: start;
     height: 2rem;
     border-radius: 2rem;
@@ -27,7 +28,8 @@ table tbody tr:hover {
     background-color: hsl(from var(--background) h s 90%);
 }
 
-td, th {
+td,
+th {
     padding: 0 0.5rem;
 }
 

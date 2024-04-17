@@ -18,7 +18,8 @@ article {
     margin-top: 2rem;
 }
 
-article h2, article p {
+article h2,
+article p {
     margin: 0;
 }
 

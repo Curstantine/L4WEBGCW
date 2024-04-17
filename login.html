@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>user profile</title>
+        <link rel="stylesheet" href="./index.css" />
+        <script defer type="module" src="./index.js"></script>
+        <style>
+            body {
+                height: 88lvh;
+            }
+            .login {
+                width: 400px;
+                height: 550px;
+                margin: 100px auto 0;
+                text-align: center;
+                border: 1px solid var(--border);
+                margin-top: 10px;
+                margin-bottom: 30px;
+                border-radius: 10%;
+            }
+
+            label {
+                display: block;
+                padding: 10px;
+            }
+
+            img {
+                display: block;
+                margin: 0 auto;
+            }
+            #avatar {
+                margin-top: 30px;
+                padding: 5px;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+
+                border: 1px solid black;
+            }
+
+            #submit {
+                background-color: #4a8cd6;
+                color: navy;
+                margin-top: 20px;
+                width: 200px;
+                padding: 10px 20px;
+                border-radius: 50px;
+                border: none;
+            }
+            h1 {
+                color: #5c5d5f9f;
+                line-height: 0.3;
+            }
+            #creater {
+                text-align: left;
+                font-style: italic;
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav></nav>
+        <!--getting the navbar -->
+
+        <div class="login">
+            <!--the container for the login-->
+            <img
+                id="avatar"
+                src="https://th.bing.com/th/id/OIF.pPBaqCrMDuyCeZ0JhX7W7Q?w=174&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+                alt="avatar"
+            />
+            <img id="logo" src="./assets/logo.svg" alt="waterwafer" />
+            <i style="color: #0284c5">clean water for everyone</i>
+
+            <form>
+                <!--forms to get the login data-->
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="username" required />
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="email" required />
+
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="password" required />
+            </form>
+            <a href="customiz.html"><button id="submit">Login</button></a>
+            <!--login button with a anchor tag to redirt to the cutomization process-->
+            <a href="#"><p>forgot password</p></a>
+        </div>
+
+        <div id="creater">
+            <!--ownership referencw-->
+            <a href="./editor_miyuni.html"><sup>Created by Miyuni Lowe</sup></a>
+        </div>
+
+        <footer></footer>
+        <!--getting the footer template -->
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                //event listener
+                const form = document.getElementById("login-form"); //form field and error refernces
+                const inputUsername = document.getElementById("username");
+                const inputEmail = document.getElementById("email");
+                const inputPassword = document.getElementById("password");
+                const errorUsername = document.getElementById("username-error");
+                const errorEmail = document.getElementById("email-error");
+                const errorPassword = document.getElementById("password-error");
+
+                form.addEventListener("submit", function (event) {
+                    //form submission handler
+                    event.preventDefault();
+                    errorUsername.textContent = "";
+                    errorEmail.textContent = "";
+                    errorPassword.textContent = "";
+
+                    if (!inputUsername.value.trim()) {
+                        //validating the unsername
+                        errorUsername.textContent = "enter username";
+                    }
+
+                    if (!inputEmail.checkValidity()) {
+                        //validating the email
+                        errorEmail.textContent = "invalid email";
+                    }
+
+                    if (!inputPassword.value.trim()) {
+                        //validating the password
+                        errorPassword.textContent = "password required";
+                    }
+
+                    if (
+                        inputUsername.value.trim() &&
+                        inputEmail.checkValidity() &&
+                        inputPassword.value.trim()
+                    ) {
+                        window.location.href = "customize.html";
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
